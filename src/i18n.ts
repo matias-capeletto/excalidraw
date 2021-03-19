@@ -58,7 +58,7 @@ export const languages: Language[] = allLanguages
   );
 
 const TEST_LANG_CODE = "__test__";
-if (process.env.NODE_ENV === ENV.DEVELOPMENT) {
+if (import.meta.env.NODE_ENV === ENV.DEVELOPMENT) {
   languages.unshift(
     { code: TEST_LANG_CODE, label: "test language" },
     {

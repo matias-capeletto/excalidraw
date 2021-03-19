@@ -1,5 +1,6 @@
 import React, { useEffect, forwardRef } from "react";
-import "./publicPath";
+// TODO:vite
+// import "./publicPath";
 
 import { InitializeApp } from "../../components/InitializeApp";
 import App from "../../components/App";

@@ -15,7 +15,9 @@ const loadFirebase = async () => {
   ).default;
   await import(/* webpackChunkName: "firestore" */ "firebase/firestore");
 
-  const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
+  const firebaseConfig = JSON.parse(
+    import.meta.env.env.REACT_APP_FIREBASE_CONFIG,
+  );
   firebase.initializeApp(firebaseConfig);
 
   return firebase;

@@ -719,8 +719,8 @@ class App extends React.Component<ExcalidrawProps, AppState> {
 
   public async componentDidMount() {
     if (
-      process.env.NODE_ENV === ENV.TEST ||
-      process.env.NODE_ENV === ENV.DEVELOPMENT
+      import.meta.env.NODE_ENV === ENV.TEST ||
+      import.meta.env.NODE_ENV === ENV.DEVELOPMENT
     ) {
       const setState = this.setState.bind(this);
       Object.defineProperties(window.h, {
@@ -4072,8 +4072,8 @@ declare global {
 }
 
 if (
-  process.env.NODE_ENV === ENV.TEST ||
-  process.env.NODE_ENV === ENV.DEVELOPMENT
+  import.meta.env.NODE_ENV === ENV.TEST ||
+  import.meta.env.NODE_ENV === ENV.DEVELOPMENT
 ) {
   window.h = window.h || ({} as Window["h"]);
 

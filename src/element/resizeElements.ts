@@ -188,7 +188,7 @@ const reshapeSingleTwoPointElement = (
   pointerX: number,
   pointerY: number,
 ) => {
-  if (process.env.NODE_ENV !== "production") {
+  if (import.meta.env.NODE_ENV !== "production") {
     validateTwoPointElementNormalized(element);
   }
   const [x1, y1, x2, y2] = getElementAbsoluteCoords(element);

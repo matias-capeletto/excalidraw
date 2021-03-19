@@ -85,10 +85,11 @@
       style="--pwacompat-splash-font: 24px Virgil"
     />
 
-    <link rel="stylesheet" href="fonts.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts.css" type="text/css" />
     <script>
       window.EXCALIDRAW_ASSET_PATH = "/";
     </script>
+    <!-- TODO:vite
     <% if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) { %>
     <script
       async
@@ -103,6 +104,7 @@
       gtag("config", "%REACT_APP_GOOGLE_ANALYTICS_ID%");
     </script>
     <% } %>
+    -->
 
     <!-- FIXME: remove this when we update CRA (fix SW caching) -->
     <style>
@@ -159,5 +161,6 @@
         <span>Loading scene...</span>
       </div>
     </div>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>

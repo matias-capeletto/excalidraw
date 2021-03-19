@@ -290,7 +290,8 @@ export const duplicateElement = <TElement extends Mutable<ExcalidrawElement>>(
   overrides?: Partial<TElement>,
 ): TElement => {
   let copy: TElement = deepCopyElement(element);
-  copy.id = process.env.NODE_ENV === "test" ? `${copy.id}_copy` : randomId();
+  copy.id =
+    import.meta.env.NODE_ENV === "test" ? `${copy.id}_copy` : randomId();
   copy.seed = randomInteger();
   copy.groupIds = getNewGroupIdsForDuplication(
     copy.groupIds,

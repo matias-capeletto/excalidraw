@@ -8,9 +8,9 @@ import { UserIdleState } from "../collab/types";
 
 const byteToHex = (byte: number): string => `0${byte.toString(16)}`.slice(-2);
 
-const BACKEND_GET = process.env.REACT_APP_BACKEND_V1_GET_URL;
-const BACKEND_V2_GET = process.env.REACT_APP_BACKEND_V2_GET_URL;
-const BACKEND_V2_POST = process.env.REACT_APP_BACKEND_V2_POST_URL;
+const BACKEND_GET = import.meta.env.REACT_APP_BACKEND_V1_GET_URL;
+const BACKEND_V2_GET = import.meta.env.REACT_APP_BACKEND_V2_GET_URL;
+const BACKEND_V2_POST = import.meta.env.REACT_APP_BACKEND_V2_POST_URL;
 
 const generateRandomID = async () => {
   const arr = new Uint8Array(10);
@@ -30,7 +30,7 @@ const generateEncryptionKey = async () => {
   return (await window.crypto.subtle.exportKey("jwk", key)).k;
 };
 
-export const SOCKET_SERVER = process.env.REACT_APP_SOCKET_SERVER_URL;
+export const SOCKET_SERVER = import.meta.env.REACT_APP_SOCKET_SERVER_URL;
 
 export type EncryptedData = {
   data: ArrayBuffer;

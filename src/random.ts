@@ -12,4 +12,4 @@ export const reseed = (seed: number) => {
 };
 
 export const randomId = () =>
-  process.env.NODE_ENV === "test" ? `id${testIdBase++}` : nanoid();
+  import.meta.env.NODE_ENV === "test" ? `id${testIdBase++}` : nanoid();

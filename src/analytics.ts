@@ -1,6 +1,5 @@
 export const trackEvent =
-  typeof process !== "undefined" &&
-  process.env?.REACT_APP_GOOGLE_ANALYTICS_ID &&
+  import.meta.env.REACT_APP_GOOGLE_ANALYTICS_ID &&
   typeof window !== "undefined" &&
   window.gtag
     ? (category: string, name: string, label?: string, value?: number) => {
@@ -10,7 +9,7 @@ export const trackEvent =
           value,
         });
       }
-    : typeof process !== "undefined" && process.env?.JEST_WORKER_ID
+    : import.meta.env.JEST_WORKER_ID
     ? (category: string, name: string, label?: string, value?: number) => {}
     : (category: string, name: string, label?: string, value?: number) => {
         // Uncomment the next line to track locally

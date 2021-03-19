@@ -110,8 +110,8 @@ class CollabWrapper extends PureComponent<Props, CollabState> {
     window.addEventListener(EVENT.UNLOAD, this.onUnload);
 
     if (
-      process.env.NODE_ENV === ENV.TEST ||
-      process.env.NODE_ENV === ENV.DEVELOPMENT
+      import.meta.env.NODE_ENV === ENV.TEST ||
+      import.meta.env.NODE_ENV === ENV.DEVELOPMENT
     ) {
       window.h = window.h || ({} as Window["h"]);
       Object.defineProperties(window.h, {
